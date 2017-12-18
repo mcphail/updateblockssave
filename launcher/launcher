@@ -1,0 +1,5 @@
+#! /bin/bash
+
+set -e
+
+$SNAP/bin/writer $SNAP_USER_DATA

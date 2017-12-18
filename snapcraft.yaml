@@ -1,0 +1,22 @@
+name:   updateblockssave
+version:        0.1
+summary:        Test whether autoupdate blocks a save
+description:    |
+        Run the program. Install a new version before pressing enter. Do the files get written or blocked by apparmor?
+confinement:    strict
+grade:  stable
+
+apps:
+        updateblockssave:
+                command:        launcher
+
+parts:
+        launcher:
+                plugin: dump
+                source: launcher
+        writer:
+                plugin: autotools
+                source: writer
+                build-packages:
+                        - gcc
+                        - make
